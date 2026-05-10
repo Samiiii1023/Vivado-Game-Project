@@ -1,26 +1,32 @@
-# Vivado generated files
-.cache/
-.gen/
-.hw/
-.ip_user_files/
-.runs/
-.sim/
-.srcs/sim_1/
-.xil/
+# Vivado generated folders
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.xil/
 
-# Logs
+# Vivado temp files
 *.jou
 *.log
 *.str
+*.pb
+*.wdf
+*.vdi
+*.vds
+*.rpt
+*.rpx
+*.dcp
 
-# Bitstream files
+# Bitstream
 *.bit
 *.bin
 
-# Temp files
+# Temp
 *.tmp
 *.backup
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
