@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -75,7 +76,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  C:/Users/Samridh/hw/hw.srcs/sources_1/imports/hdl/PS2Receiver.v
   {C:/Users/Samridh/Game Project/Game Project.srcs/sources_1/new/clk_div.v}
+  C:/Users/Samridh/hw/hw.srcs/sources_1/imports/hdl/debouncer.v
   {C:/Users/Samridh/Game Project/Game Project.srcs/sources_1/new/display.v}
   {C:/Users/Samridh/Game Project/Game Project.srcs/sources_1/new/vga_sync.v}
   {C:/Users/Samridh/Game Project/Game Project.srcs/sources_1/new/top.v}

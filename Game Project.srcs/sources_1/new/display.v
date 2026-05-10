@@ -22,8 +22,12 @@
 
 module display(
     input video_on,
+
     input [9:0] x,
     input [9:0] y,
+
+    input [9:0] player_x,
+    input [9:0] player_y,
 
     output reg [3:0] r,
     output reg [3:0] g,
@@ -31,15 +35,18 @@ module display(
 );
 
 // ======================================
-// Player square position
+// Player size
 // ======================================
-parameter PLAYER_X = 300;
-parameter PLAYER_Y = 220;
+
 parameter PLAYER_SIZE = 40;
+
+// ======================================
+// Drawing logic
+// ======================================
 
 always @(*) begin
 
-    // Outside visible screen
+    // Outside visible area
     if (!video_on) begin
         r = 0;
         g = 0;
@@ -48,10 +55,10 @@ always @(*) begin
 
     // Draw player square
     else if (
-        x >= PLAYER_X &&
-        x < PLAYER_X + PLAYER_SIZE &&
-        y >= PLAYER_Y &&
-        y < PLAYER_Y + PLAYER_SIZE
+        x >= player_x &&
+        x < player_x + PLAYER_SIZE &&
+        y >= player_y &&
+        y < player_y + PLAYER_SIZE
     ) begin
         r = 4'b1111;
         g = 4'b1111;
@@ -64,6 +71,8 @@ always @(*) begin
         g = 0;
         b = 0;
     end
+
 end
+
 
 endmodule
